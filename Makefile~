@@ -1,0 +1,17 @@
+
+
+CXX = g++
+CC = gcc
+LAPACK =/Users/rbdavid/lib 
+OPTS = -O3 -ftree-vectorize
+
+mc: liq_ar.c stringlib.c stringlib.h read_cfg_file.c read_cfg_file.h
+	$(CC) -c  liq_ar.c stringlib.c read_cfg_file.c $(OPTS) 
+	$(CC) liq_ar.o stringlib.o $(OPTS) -o liq_ar.x
+
+
+
+
+
+
+
