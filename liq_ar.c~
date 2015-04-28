@@ -82,7 +82,7 @@ int main() {
 
 	// need to initialize the velocities for each particle... 
 
-	Tot_potential_en = force_energy_calc(nAtoms, box, cutoff2, Ar_eps, Ar_sigma6, coord, atomForces, component);
+	Tot_potential_en = force_energy_calc(nAtoms, box, cutoff2, Ar_eps, Ar_sigma6, coord, atomForces);
 
 	printf("Initial Total potential energy = %f\n", Tot_potential_en);
 
