@@ -1,0 +1,16 @@
+Molecular Dynamics Simulation of Argon; developed by RBD
+Name of trajectory file: liq_ar.xyz
+Name of log file: liq_ar.log
+Number of atoms: 512
+Temperature: 300.000000
+Number of steps: 10000
+Write to trajectory and log files every 100
+Nonbonding distance cutoff: 10.000000
+Re-evaluate velocities every 10
+Argon Parameters: 
+Epsilon (kcal/mol): 0.210849
+Sigma (Angstrom): 3.345000
+Sigma^6 (Angstrom^6): 1400.801934
+kB*T = 0.596161
+Box dimension: 28.400000 
+Initial Total potential energy = -582.158069

@@ -48,8 +48,6 @@ int main() {
 
 	// variable declaration for force and energy values 
 
-	double **component;
-
 	double **atomForces;		// variable declaration for force acting on atom array
 
 	double Tot_potential_en;	// total potential energy of the system
@@ -65,8 +63,6 @@ int main() {
 
 	coord = (double**) malloc(nAtoms*sizeof(double*));		// allocate coordinate array memory
 	
-	component = (double**) calloc(3, sizeof(double*));		//allocate memory for the component analysis array...
-
 	atomForces = (double**) calloc(nAtoms,sizeof(double*));		// allocate forces array memory
 	
 //	atomVelocities = (double**) malloc(nAtoms,sizeof(double*));	// allocate velocity array memory
@@ -82,7 +78,7 @@ int main() {
 
 	// need to initialize the velocities for each particle... 
 
-	Tot_potential_en = force_energy_calc(nAtoms, box, cutoff2, Ar_eps, Ar_sigma6, coord, atomForces, component);
+	Tot_potential_en = force_energy_calc(nAtoms, box, cutoff2, Ar_eps, Ar_sigma6, coord, atomForces);
 
 	printf("Initial Total potential energy = %f\n", Tot_potential_en);
 

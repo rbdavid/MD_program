@@ -1,6 +1,7 @@
 /* file init_positions.c */
 // c code for init_positions subroutine
 
+#include <stdio.h>
 #include "init_positions.h"
 
 void init_positions(double **coord, int nAtoms, double *box) {

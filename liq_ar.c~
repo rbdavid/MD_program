@@ -48,8 +48,6 @@ int main() {
 
 	// variable declaration for force and energy values 
 
-	double **component;
-
 	double **atomForces;		// variable declaration for force acting on atom array
 
 	double Tot_potential_en;	// total potential energy of the system
