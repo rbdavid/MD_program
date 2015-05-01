@@ -19,7 +19,7 @@
 static double kB = 1.9872041E-3; // actually R in units of kcal/mol/K
 
 //  ---------------------------------
-//Main Program                                                        
+// Main Program                                                        
 //  ---------------------------------
 
 int main() {
@@ -117,7 +117,7 @@ int main() {
 	}
 
 //  ---------------------------------
-//  open new files for traj, log, forces, velocities, etc...
+// open new files for traj, log, forces, velocities, etc...
 //  ---------------------------------	
 
 	kBT = kB*temp;			// solve for kB*T value

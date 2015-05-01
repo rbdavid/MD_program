@@ -121,7 +121,7 @@ int main() {
 //  ---------------------------------	
 
 	kBT = kB*temp;			// solve for kB*T value
-	fprintf(logOut, "kB*T = %f\n", kBT);	// Print kB*T value to log file;
+	fprintf(logOut, "kB*T = %f kcal/mol \n", kBT);	// Print kB*T value to log file;
 
 //  ---------------------------------	
 // initialize particle positions
