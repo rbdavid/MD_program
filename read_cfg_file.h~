@@ -2,6 +2,7 @@
 // header file for the read_cfg_file subroutine
 
 #include <stdio.h>
+//#include "stringlib.h"
 
 void read_cfg_file(char *, char *, double *, int *, int *, int *, int *, int *, double *, double *, double *, FILE *, FILE *);
 
