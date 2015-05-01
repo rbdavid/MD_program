@@ -23,8 +23,6 @@ void init_positions(double **coord, int nAtoms, double *box) {
 	// determine the size of the bins
 	fBoxD = 3.55;           // Density??
 	*box = iBoxD*fBoxD;     // calculate the box dimension
-	printf("Box dimension: %f \n", *box);
-
 
 	// add a particle in each bin
 	atomCount = 0;
