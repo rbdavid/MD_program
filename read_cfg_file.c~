@@ -38,20 +38,5 @@ void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIte
 			*cutoff = atof(string_secondword(buffer));
 		}
 	}
-
-//	fprintf(logOut, "Molecular Dynamics Simulation of Argon; developed by RBD\n");
-//	fprintf(logOut, "Name of trajectory file: %s\n",trajFileName);
-//	fprintf(logOut, "Name of log file: %s\n",logFileName);
-//	fprintf(logOut, "Number of atoms: %d\n",*nAtoms);
-//	fprintf(logOut, "Temperature: %f\n",*temp);
-//	fprintf(logOut, "Number of steps: %d\n",*nIter);
-//	fprintf(logOut, "Write to trajectory and log files every %d\n",*deltaWrite);
-//	fprintf(logOut, "Nonbonding distance cutoff: %f\n", cutoff);
-//	fprintf(logOut, "Re-evaluate velocities every %d\n", *reevalvel);
-//	fprintf(logOut, "Argon Parameters: \n");
-//	fprintf(logOut, "Epsilon (kcal/mol): %f\n", *Ar_eps);
-//	fprintf(logOut, "Sigma (Angstrom): %f\n", Ar_sigma);
-//	fprintf(logOut, "Sigma^6 (Angstrom^6): %f\n", *Ar_sigma6);
-
 }
 

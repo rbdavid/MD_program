@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include "init_positions.h"
 
-void init_positions(double **coord, int nAtoms, double *box) {
+void init_positions(double **current_coord, int nAtoms, double *box) {
 
 	double cbrt(double x);          // cube root function
 	int iBoxD;                      // integer box dimension
@@ -23,8 +23,6 @@ void init_positions(double **coord, int nAtoms, double *box) {
 	// determine the size of the bins
 	fBoxD = 3.55;           // Density??
 	*box = iBoxD*fBoxD;     // calculate the box dimension
-	printf("Box dimension: %f \n", *box);
-
 
 	// add a particle in each bin
 	atomCount = 0;
@@ -35,9 +33,9 @@ void init_positions(double **coord, int nAtoms, double *box) {
 			for(z=0; z<iBoxD; z++) {
 				if (atomCount < nAtoms) {
 					zPos = (z+0.5)*fBoxD;
-					coord[atomCount][0]=xPos;
-					coord[atomCount][1]=yPos;
-					coord[atomCount][2]=zPos;
+					current_coord[atomCount][0]=xPos;
+					current_coord[atomCount][1]=yPos;
+					current_coord[atomCount][2]=zPos;
 					atomCount++;
 				} else {
 					break;

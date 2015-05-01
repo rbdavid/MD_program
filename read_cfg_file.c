@@ -4,7 +4,7 @@
 #include "read_cfg_file.h"
 #include "stringlib.h"
 
-void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIter, int *deltaWrite, int *reevalvel, int *ig, double *temp, double *Ar_eps, double *Ar_sigma, double *cutoff) {	
+void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIter, int *deltaWrite, int *reevalvel, int *ig, double *temp, double *Ar_eps, double *Ar_sigma, double *cutoff, double *delta_t, double *Ar_m) {	
 
 	char buffer[1024];
 	char tempBuffer[1024];
@@ -34,8 +34,12 @@ void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIte
 			*Ar_eps = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"Ar_sigma",8)==0) {
 			*Ar_sigma = atof(string_secondword(buffer));
+		} else if (strncmp(firstWord,"Ar_m",4)==0) {
+			*Ar_m = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"cutoff",6)==0) {
 			*cutoff = atof(string_secondword(buffer));
+		} else if (strncmp(firstWord,"delta_t",7)==0) {
+			*delta_t = atof(string_secondword(buffer));
 		}
 	}
 }

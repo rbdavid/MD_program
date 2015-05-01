@@ -16,10 +16,10 @@
 // Declare Global Variables
 //  ---------------------------------
 
-static double kB = 1.9872041E-3; // actually R in units of kcal/mol/K
+static double kB = 1.3806488E-23; // units: m^2 kg s^-2 K^-1 (or J K^-1)
 
 //  ---------------------------------
-//Main Program                                                        
+// Main Program                                                        
 //  ---------------------------------
 
 int main() {
@@ -40,7 +40,9 @@ int main() {
 	double cutoff2;			// nonbonding interaction cutoff distance squared (Angstrom^2)
 	int reevalvel;			// number of steps between reevaluation of velocities...
 	int ig;				// random number for velocity initialization
+	double delta_t;			// delta t value; MD time step; fs
 
+	double Ar_m;			// mass of Ar in kg
 	double Ar_eps;			// epsilon parameter for LJ energy calculation
 	double Ar_sigma;		// sigma value...
 	double Ar_sigma6;		// sigma^6 for quick LJ energy calculation...
@@ -55,7 +57,9 @@ int main() {
 
 	double box; 			// cubic box dimension
 
-	double **coord;			// variable declaration for the coordinates of particles array
+	double **old_coord;		// variable declaration for the coordinates of particles array
+
+	double **coord;
 
 //	double **atomVelocities;	// variable declaration for the velocities of particles array
 
@@ -74,7 +78,7 @@ int main() {
 // read config data from standard in
 //  ---------------------------------
 
-	read_cfg_file(trajFileName, logFileName, &nAtoms, &nIter, &deltaWrite, &reevalvel, &ig, &temp, &Ar_eps, &Ar_sigma, &cutoff); 
+	read_cfg_file(trajFileName, logFileName, &nAtoms, &nIter, &deltaWrite, &reevalvel, &ig, &temp, &Ar_eps, &Ar_sigma, &cutoff, &delta_t, &Ar_m); 
 
 	Ar_sigma6 = Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma;
 
@@ -95,10 +99,12 @@ int main() {
 	fprintf(logOut, "Number of atoms: %d\n", nAtoms);
 	fprintf(logOut, "Temperature: %f\n", temp);
 	fprintf(logOut, "Number of steps: %d\n", nIter);
+	fprintf(logOut, "Time step: %f femtoseconds", delta_t);
 	fprintf(logOut, "Write to trajectory and log files every %d steps\n", deltaWrite);
 	fprintf(logOut, "Nonbonding distance cutoff: %f Angstroms\n", cutoff);
 	fprintf(logOut, "Re-evaluate velocities every %d steps\n", reevalvel);
 	fprintf(logOut, "Argon Parameters: \n");
+	fprintf(logOut, "Argon Mass: %E kg \n", Ar_m);
 	fprintf(logOut, "Epsilon (kcal/mol): %f\n", Ar_eps);
 	fprintf(logOut, "Sigma (Angstrom): %f\n", Ar_sigma);
 	
@@ -106,22 +112,24 @@ int main() {
 // array memory assignment ???
 //  ---------------------------------
 
-        coord = (double**) malloc(nAtoms*sizeof(double*));              // allocate coordinate array memory
+	old_coord = (double**) malloc(nAtoms*sizeof(double*));
+	coord = (double**) malloc(nAtoms*sizeof(double*));
 	atomForces = (double**) calloc(nAtoms,sizeof(double*));         // allocate forces array memory; was calloc(nAtoms,sizeof(double*));
 //      atomVelocities = (double**) malloc(nAtoms,sizeof(double*));     // allocate velocity array memory
 
 	for (i=0; i<nAtoms; i++) {
+		old_coord[i] = (double*) malloc(3*sizeof(double));
 		coord[i] = (double*) malloc(3*sizeof(double));
 		atomForces[i] = (double*) malloc(3*sizeof(double));
 //		atomVelocities[i] = (double*) malloc(3*sizeof(double));
 	}
 
 //  ---------------------------------
-//  open new files for traj, log, forces, velocities, etc...
+// open new files for traj, log, forces, velocities, etc...
 //  ---------------------------------	
 
-	kBT = kB*temp;			// solve for kB*T value
-	fprintf(logOut, "kB*T = %f kcal/mol \n", kBT);	// Print kB*T value to log file;
+	kBT = kB*temp;			// kBT value has units of m^2 kg s^-2 (or J)
+	fprintf(logOut, "kB*T = %E kcal/mol \n", kBT);	// Print kB*T value to log file;
 
 //  ---------------------------------	
 // initialize particle positions

@@ -4,7 +4,7 @@
 #include <math.h>                                                     
 #include "force_energy_calc.h"
 
-double force_energy_calc(int nAtoms, double box, double cutoff2, double Ar_eps, double Ar_sigma6, double **coord, double **atomForces) {
+double force_energy_calc(int nAtoms, double box, double cutoff2, double Ar_eps, double Ar_sigma6, double **current_coord, double **atomForces) {
 
 	int atom1;
 	int atom2;
@@ -32,7 +32,7 @@ double force_energy_calc(int nAtoms, double box, double cutoff2, double Ar_eps, 
 			dist6d = 0;
 			for(j=0;j<3;j++) {
 				component[j] = 0.0;
-				component[j] = coord[atom1][j] - coord[atom2][j];
+				component[j] = current_coord[atom1][j] - current_coord[atom2][j];
 				if(component[j] < -box/2.0) {
 					component[j] += box;
 				} else if(component[j] > box/2.0) {
@@ -45,7 +45,7 @@ double force_energy_calc(int nAtoms, double box, double cutoff2, double Ar_eps, 
 				dist6d = dist2d*dist2d*dist2d;
 				sigma_dist_6 = Ar_sigma6*dist6d;
 				ff = 48*Ar_eps*dist2d*sigma_dist_6*(sigma_dist_6-0.5);
-				for(i=0; i<3; i++) {
+				for(j=0; j<3; j++) {
 					atomForces[atom1][j]+= ff*component[j]*sqrt(dist2);
 					atomForces[atom2][j]+= -ff*component[j]*sqrt(dist2);
 				}
