@@ -4,6 +4,8 @@
 ---------------------------------
 trajFile liq_ar.xyz
 logFile liq_ar.log
+velFile liq_ar.vel
+forFile liq_ar.force
 
 #NPT SIMULATION
 ---------------------------------
@@ -18,6 +20,7 @@ deltaWrite 100
 cutoff 10.0		# Angstroms
 reevalvel 10		# reevaluate velocities every 10 steps (not sure how often I should do this...)
 ig 1897430		# random number seed for velocity initialization
+delta_t 2		# 2 fs
 
 #PARTICLE PARAMETERS
 ---------------------------------

@@ -6,6 +6,7 @@
 
 void write_xyz_step(int nAtoms, int iter, double box, double **coord, FILE *xyzOut) {
 
+	int i, j, k;
 	int atom;
 	
 	fprintf(xyzOut, "%d \n", nAtoms);

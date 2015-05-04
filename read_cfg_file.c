@@ -4,7 +4,7 @@
 #include "read_cfg_file.h"
 #include "stringlib.h"
 
-void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIter, int *deltaWrite, int *reevalvel, int *ig, double *temp, double *Ar_eps, double *Ar_sigma, double *cutoff, double *delta_t, double *Ar_m) {	
+void read_cfg_file(char *trajFileName, char *logFileName, char *velFileName, char *forFileName, int *nAtoms, int *nIter, int *deltaWrite, int *reevalvel, int *ig, double *temp, double *Ar_eps, double *Ar_sigma, double *cutoff, double *delta_t, double *Ar_m) {	
 
 	char buffer[1024];
 	char tempBuffer[1024];
@@ -18,6 +18,10 @@ void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIte
 			strcpy(trajFileName,string_secondword(buffer));
 		} else if (strncmp(firstWord,"logFile",7)==0) {
 			strcpy(logFileName,string_secondword(buffer));
+		} else if (strncmp(firstWord,"velFile",7)==0) {
+			strcpy(velFileName,string_secondword(buffer));
+		} else if (strncmp(firstWord,"forFile",7)==0) {
+			strcpy(forFileName,string_secondword(buffer));
 		} else if (strncmp(firstWord,"temperature",11)==0) {
 			*temp = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"nAtoms",6)==0) {
@@ -29,7 +33,7 @@ void read_cfg_file(char *trajFileName, char *logFileName, int *nAtoms, int *nIte
 		} else if (strncmp(firstWord,"reevalvel",9)==0) {
 			*reevalvel = atoi(string_secondword(buffer));
 		} else if (strncmp(firstWord,"ig",2)==0) {
-			*ig = atoi(string_secondword(buffer));
+			*ig = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"Ar_eps",6)==0) {
 			*Ar_eps = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"Ar_sigma",8)==0) {

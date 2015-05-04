@@ -3,5 +3,5 @@
 
 #include <stdio.h>
 
-void read_cfg_file(char *, char *, int *, int *, int *, int *, int *, double *, double *, double *, double *, double *, double *);
+void read_cfg_file(char *, char *, char *, char *, int *, int *, int *, int *, int *, double *, double *, double *, double *, double *, double *);
 

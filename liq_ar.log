@@ -1,18 +1,22 @@
 Molecular Dynamics Simulation of Argon; developed by RBD
-Name of trajectory file: liq_ar.xyz
 Name of log file: liq_ar.log
+Name of trajectory file: liq_ar.xyz
+Name of velocity file: liq_ar.vel
+Name of force file: liq_ar.force
 Number of atoms: 512
 Temperature: 300.000000
-Number of steps: 10000
+Number of steps: 300
 Time step: 2.000000 femtoseconds
 Write to trajectory and log files every 100 steps
 Nonbonding distance cutoff: 10.000000 Angstroms
-Re-evaluate velocities every 10 steps
+
 Argon Parameters: 
 Argon Mass: 6.626000E-26 kg 
 Epsilon (kcal/mol): 0.210849
 Sigma (Angstrom): 3.345000
-kB*T = 4.141946E-21 kcal/mol 
+
+kB*T = 4.141946E-21  
 Box dimension: 28.400000 Angstroms 
  
-Initial Total potential energy = -582.158069
+Step 0
+Total Potential Energy (kcal mol^-1) = 0.000000E+00 
