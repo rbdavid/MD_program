@@ -13,12 +13,15 @@ void init_velocities(int nAtoms, int ig, double Ar_m, double kBT, double **atomV
 	int i, j;
 	double scale_factor;
 	double dof;
+	double convert;
 
 	double sqrt(double x);
 
 	srand((unsigned) ig);
 
 	dof = nAtoms*3;
+
+	convert = 10E-2; 		// conversion factor to turn m s^-1 to Ang ps^-1
 
 	for(i=0; i<nAtoms; i++) {
 		for(j=0; j<3; j++) {
@@ -35,7 +38,7 @@ void init_velocities(int nAtoms, int ig, double Ar_m, double kBT, double **atomV
 	for(i=0; i<nAtoms; i++) {
 		for(j=0; j<3; j++) {
 			sumv[j] = sumv[j]/nAtoms;
-			atomVelocities[i][j] = (atomVelocities[i][j] - sumv[j])*scale_factor;
+			atomVelocities[i][j] = (atomVelocities[i][j] - sumv[j])*scale_factor*convert;
 		}
 	}
 }

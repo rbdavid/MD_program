@@ -23,6 +23,7 @@
 //  ---------------------------------
 
 static double kB = 1.3806488E-23; // units: m^2 kg s^-2 K^-1 (or J K^-1)
+static double Na = 6.02214129E23; // units: atoms mol^-1
 
 //  ---------------------------------
 // Main Program                                                        
@@ -58,6 +59,7 @@ int main() {
 	double kBT;
 	double delta_t2;
 	double Ar_m2d;
+	double Ar_m_na2d;
 
 	int i, iter;			// generic indeces
 
@@ -109,6 +111,8 @@ int main() {
 	delta_t2 = delta_t*delta_t;	// delta_t squared; used often in the position calculation calc
 
 	Ar_m2d = 1/(Ar_m*2.0);		// this value is used often in the position/velocity calc
+	
+	Ar_m_na2d = 1/(Na*Ar_m*2.0);	// this value is used often in the position/velocity calc
 
 //  ---------------------------------
 // array memory assignment ???
@@ -147,7 +151,7 @@ int main() {
 
 	init_velocities(nAtoms, ig, Ar_m, kBT, atomVelocities);
 	
-	force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, Tot_potential_en, coord, atomForces, old_atomForces);
+	force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 
 	write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
 
@@ -166,12 +170,12 @@ int main() {
 //	MD LOOP
 //  ---------------------------------   
 
-	for(iter=1;iter>nIter;iter++) {
-		positions_calc(nAtoms, Ar_m2d, delta_t, delta_t2, box, coord, atomVelocities, atomForces);
+	for(iter=1;iter<=nIter;iter++) {
+		positions_calc(nAtoms, Ar_m_na2d, delta_t, delta_t2, box, coord, atomVelocities, atomForces);
 
-		force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, Tot_potential_en, coord, atomForces, old_atomForces);
+		force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 	
-		velocity_calc(nAtoms, iter, deltaWrite, Ar_m, Ar_m2d, delta_t, kB, int_temp, Tot_kinetic_en, atomVelocities, atomForces, old_atomForces);
+		velocity_calc(nAtoms, iter, deltaWrite, Ar_m, Ar_m_na2d, delta_t, kB, &int_temp, &Tot_kinetic_en, atomVelocities, atomForces, old_atomForces);
 
 		if(iter%deltaWrite==0) {
 

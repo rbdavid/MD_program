@@ -6,7 +6,7 @@ Name of force file: liq_ar.force
 Number of atoms: 512
 Temperature: 300.000000
 Number of steps: 300
-Time step: 2.000000 femtoseconds
+Time step: 0.002000 femtoseconds
 Write to trajectory and log files every 100 steps
 Nonbonding distance cutoff: 10.000000 Angstroms
 
@@ -19,4 +19,19 @@ kB*T = 4.141946E-21
 Box dimension: 28.400000 Angstroms 
  
 Step 0
-Total Potential Energy (kcal mol^-1) = 0.000000E+00 
+Total Potential Energy (kcal mol^-1) = -5.821581E+02 
+Step 100
+Total Energy (kcal mol^-1) = 1.073451E+36 
+Total Potential Energy (kcal mol^-1) = -4.909898E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.073451E+36 
+Instantaneous Temperature (K) = 1.758403E+35 
+Step 200
+Total Energy (kcal mol^-1) = 5.218289E+36 
+Total Potential Energy (kcal mol^-1) = -4.140988E+02 
+Total Kinetic Energy (kcal mol^-1) = 5.218289E+36 
+Instantaneous Temperature (K) = 8.547998E+35 
+Step 300
+Total Energy (kcal mol^-1) = 1.247955E+37 
+Total Potential Energy (kcal mol^-1) = -3.492493E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.247955E+37 
+Instantaneous Temperature (K) = 2.044255E+36 

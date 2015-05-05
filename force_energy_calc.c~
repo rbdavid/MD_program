@@ -4,7 +4,7 @@
 #include <math.h>                                                     
 #include "force_energy_calc.h"
 
-void force_energy_calc(int nAtoms, int iter, int deltaWrite, double box, double cutoff2, double Ar_eps, double Ar_sigma6, double Tot_potential_en, double **coord, double **atomForces, double **old_atomForces) {
+void force_energy_calc(int nAtoms, int iter, int deltaWrite, double box, double cutoff2, double Ar_eps, double Ar_sigma6, double *Tot_potential_en, double **coord, double **atomForces, double **old_atomForces) {
 
 	int atom1;
 	int atom2;
@@ -16,11 +16,11 @@ void force_energy_calc(int nAtoms, int iter, int deltaWrite, double box, double 
 	double component[3] = {0.0, 0.0, 0.0};
 //	int atomCount;
 
+	double convert;
 	double ff;
 
-	double sqrt(double x);
-
-	Tot_potential_en = 0.0;
+	convert = 4184.;		// converts units of force to J mol^-1 Ang^-1
+	*Tot_potential_en = 0.0;
 
 	for(atom1=0; atom1<nAtoms-1; atom1++){
 		for(atom2=atom1+1;atom2<nAtoms;atom2++) {
@@ -45,18 +45,18 @@ void force_energy_calc(int nAtoms, int iter, int deltaWrite, double box, double 
 				for(j=0; j<3; j++) {
 					old_atomForces[atom1][j] = atomForces[atom1][j];
 					old_atomForces[atom2][j] = atomForces[atom2][j];
-					atomForces[atom1][j]+= ff*component[j]*sqrt(dist2);
-					atomForces[atom2][j]+= -ff*component[j]*sqrt(dist2);
+					atomForces[atom1][j]+= ff*component[j]*convert;
+					atomForces[atom2][j]+= -ff*component[j]*convert;
 				}
 				if(iter%deltaWrite==0) {
-					Tot_potential_en += sigma_dist_6*(sigma_dist_6 - 1.0);
+					*Tot_potential_en += sigma_dist_6*(sigma_dist_6 - 1.0);
 				}
 			}
 		}
 	}
 	
 	if(iter%deltaWrite==0) {
-		Tot_potential_en = 4.0*Ar_eps*Tot_potential_en;
+		*Tot_potential_en = 4.0*Ar_eps* (*Tot_potential_en);
 	}
 
 //	IDEA for increasing performance; move the 48*Ar_eps calculation outside of cutoff loop; I can't determine if this will actually be quicker though...
