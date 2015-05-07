@@ -33,7 +33,7 @@ void init_positions(double **coord, int nAtoms, double *box) {
 			for(z=0; z<iBoxD; z++) {
 				if (atomCount < nAtoms) {
 					zPos = (z+0.5)*fBoxD;
-					coord[atomCount][0]=xPos;
+					coord[atomCount][0]=xPos;		// Units: Angstrom
 					coord[atomCount][1]=yPos;
 					coord[atomCount][2]=zPos;
 					atomCount++;

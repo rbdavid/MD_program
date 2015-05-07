@@ -43,23 +43,23 @@ int main() {
 	double temp;    		// temperature
 	int nAtoms; 			// Number of atoms
 
-	int nIter;      		// number of MC iterations
-	int deltaWrite; 		// how often to write coordinates and log info in MC
+	int nIter;      		// number of MD iterations
+	int deltaWrite; 		// how often to write coordinates and log info 
 	double cutoff;			// cutoff distance (Angstrom)
 	double cutoff2;			// nonbonding interaction cutoff distance squared (Angstrom^2)
-	int reevalvel;			// number of steps between reevaluation of velocities...
 	int ig;				// random number for velocity initialization
-	double delta_t;			// delta t value; MD time step; fs
+	double delta_t;			// delta t value; MD time step; ps 
 
 	double Ar_m;			// mass of Ar in kg
+	double Ar_mmass;		// molar mass of Ar in kg mol^-1
 	double Ar_eps;			// epsilon parameter for LJ energy calculation
 	double Ar_sigma;		// sigma value...
 	double Ar_sigma6;		// sigma^6 for quick LJ energy calculation...
 
 	double kBT;
 	double delta_t2;
-	double Ar_m2d;
-	double Ar_m_na2d;
+//	double Ar_m2d;
+//	double Ar_m_na2d;
 
 	int i, iter;			// generic indeces
 
@@ -68,8 +68,6 @@ int main() {
 //  ---------------------------------
 
 	double box; 			// cubic box dimension
-
-//	double **old_coord;		// variable declaration for the coordinates of particles array
 
 	double **coord;
 
@@ -100,32 +98,26 @@ int main() {
 // read config data from standard in
 //  ---------------------------------
 
-	read_cfg_file(trajFileName, logFileName, velFileName, forFileName, &nAtoms, &nIter, &deltaWrite, &reevalvel, &ig, &temp, &Ar_eps, &Ar_sigma, &cutoff, &delta_t, &Ar_m); 
+	read_cfg_file(trajFileName, logFileName, velFileName, forFileName, &nAtoms, &nIter, &deltaWrite, &ig, &temp, &Ar_eps, &Ar_sigma, &cutoff, &delta_t, &Ar_m, &Ar_mmass); 
 
-	Ar_sigma6 = Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma;
+	Ar_sigma6 = Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma*Ar_sigma;		// Units: Angstrom^6
 
-	cutoff2 = cutoff*cutoff;
+	cutoff2 = cutoff*cutoff;	// Units: Angstrom^2
 
 	kBT = kB*temp;			// kBT value has units of m^2 kg s^-2 (or J)
 
-	delta_t2 = delta_t*delta_t;	// delta_t squared; used often in the position calculation calc
-
-	Ar_m2d = 1/(Ar_m*2.0);		// this value is used often in the position/velocity calc
-	
-	Ar_m_na2d = 1/(Na*Ar_m*2.0);	// this value is used often in the position/velocity calc
+	delta_t2 = delta_t*delta_t;	// delta_t squared; used often in the position calculation calc; ps^2
 
 //  ---------------------------------
 // array memory assignment ???
 //  ---------------------------------
 
-//	old_coord = (double**) malloc(nAtoms*sizeof(double*));
 	coord = (double**) malloc(nAtoms*sizeof(double*));
 	old_atomForces = (double**) calloc(nAtoms, sizeof(double*));
 	atomForces = (double**) calloc(nAtoms,sizeof(double*));         // allocate forces array memory; was calloc(nAtoms,sizeof(double*));
 	atomVelocities = (double**) calloc(nAtoms,sizeof(double*));     // allocate velocity array memory
 
 	for (i=0; i<nAtoms; i++) {
-//		old_coord[i] = (double*) malloc(3*sizeof(double));
 		coord[i] = (double*) malloc(3*sizeof(double));
 		old_atomForces[i] = (double*) malloc(3*sizeof(double));
 		atomForces[i] = (double*) malloc(3*sizeof(double));
@@ -147,13 +139,13 @@ int main() {
 	
 	iter =0;
 	
-	init_positions(coord,nAtoms,&box);
+	init_positions(coord,nAtoms,&box);		// Units of coord: Angstrom
 
 	init_velocities(nAtoms, ig, Ar_m, kBT, atomVelocities);
 	
 	force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 
-	write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
+	write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_mmass, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
 
 	write_xyz_step(nAtoms, iter, box, coord, xyzOut);
 
@@ -171,17 +163,17 @@ int main() {
 //  ---------------------------------   
 
 	for(iter=1;iter<=nIter;iter++) {
-		positions_calc(nAtoms, Ar_m_na2d, delta_t, delta_t2, box, coord, atomVelocities, atomForces);
+		positions_calc(nAtoms, Ar_mmass, delta_t, delta_t2, box, coord, atomVelocities, atomForces);
 
 		force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 	
-		velocity_calc(nAtoms, iter, deltaWrite, Ar_m, Ar_m_na2d, delta_t, kB, &int_temp, &Tot_kinetic_en, atomVelocities, atomForces, old_atomForces);
+		velocity_calc(nAtoms, iter, deltaWrite, Ar_m, Ar_mmass, delta_t, kB, &int_temp, &Tot_kinetic_en, atomVelocities, atomForces, old_atomForces);
 
 		if(iter%deltaWrite==0) {
 
 			Tot_en = Tot_kinetic_en + Tot_potential_en;
 			
-			write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
+			write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_mmass, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
 
 			write_xyz_step(nAtoms, iter, box, coord, xyzOut);
 			

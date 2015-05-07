@@ -4,7 +4,7 @@
 #include "read_cfg_file.h"
 #include "stringlib.h"
 
-void read_cfg_file(char *trajFileName, char *logFileName, char *velFileName, char *forFileName, int *nAtoms, int *nIter, int *deltaWrite, int *reevalvel, double *ig, double *temp, double *Ar_eps, double *Ar_sigma, double *cutoff, double *delta_t, double *Ar_m) {	
+void read_cfg_file(char *trajFileName, char *logFileName, char *velFileName, char *forFileName, int *nAtoms, int *nIter, int *deltaWrite, int *ig, double *temp, double *Ar_eps, double *Ar_sigma, double *cutoff, double *delta_t, double *Ar_m, double *Ar_mmass) {	
 
 	char buffer[1024];
 	char tempBuffer[1024];
@@ -30,8 +30,6 @@ void read_cfg_file(char *trajFileName, char *logFileName, char *velFileName, cha
 			*nIter = atoi(string_secondword(buffer));
 		} else if (strncmp(firstWord,"deltaWrite",10)==0) {
 			*deltaWrite = atoi(string_secondword(buffer));
-		} else if (strncmp(firstWord,"reevalvel",9)==0) {
-			*reevalvel = atoi(string_secondword(buffer));
 		} else if (strncmp(firstWord,"ig",2)==0) {
 			*ig = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"Ar_eps",6)==0) {
@@ -40,6 +38,8 @@ void read_cfg_file(char *trajFileName, char *logFileName, char *velFileName, cha
 			*Ar_sigma = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"Ar_m",4)==0) {
 			*Ar_m = atof(string_secondword(buffer));
+		} else if (strncmp(firstWord,"Ar_mmass",8)==0) {
+			*Ar_mmass = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"cutoff",6)==0) {
 			*cutoff = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"delta_t",7)==0) {
