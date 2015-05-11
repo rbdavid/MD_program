@@ -38,7 +38,7 @@ void read_cfg_file(char *trajFileName, char *logFileName, char *velFileName, cha
 			*Ar_sigma = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"Ar_m",4)==0) {
 			*Ar_m = atof(string_secondword(buffer));
-		} else if (strncmp(firstWord,"Ar_mmass",8)==0) {
+		} else if (strncmp(firstWord,"MW_Ar",5)==0) {
 			*Ar_mmass = atof(string_secondword(buffer));
 		} else if (strncmp(firstWord,"cutoff",6)==0) {
 			*cutoff = atof(string_secondword(buffer));

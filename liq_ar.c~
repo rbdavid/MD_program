@@ -22,9 +22,6 @@
 // Declare Global Variables
 //  ---------------------------------
 
-static double kB = 1.3806488E-23; // units: m^2 kg s^-2 K^-1 (or J K^-1)
-static double Na = 6.02214129E23; // units: atoms mol^-1
-
 static double R = 0.0019872;		// units: kcal mol^-1 K^-1
 
 //  ---------------------------------
@@ -58,7 +55,6 @@ int main() {
 	double Ar_sigma;		// sigma value...
 	double Ar_sigma6;		// sigma^6 for quick LJ energy calculation...
 
-	double kBT;
 	double RT;
 	double delta_t2;
 
@@ -107,8 +103,6 @@ int main() {
 
 	cutoff2 = cutoff*cutoff;	// Units: Angstrom^2
 
-	kBT = kB*temp;			// kBT value has units of m^2 kg s^-2 (or J)
-
 	RT = R*temp;
 
 	delta_t2 = delta_t*delta_t;	// delta_t squared; used often in the position calculation calc; ps^2
@@ -152,7 +146,7 @@ int main() {
 	
 	force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 
-	write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_mmass, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
+	write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_mmass, Ar_eps, Ar_sigma, RT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
 
 	write_xyz_step(nAtoms, iter, box, coord, xyzOut);
 
@@ -180,7 +174,7 @@ int main() {
 
 			Tot_en = Tot_kinetic_en + Tot_potential_en;
 			
-			write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_m, Ar_mmass, Ar_eps, Ar_sigma, kBT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
+			write_log_step(iter, logOut, logFileName, trajFileName, velFileName, forFileName, nAtoms, temp, nIter, delta_t, deltaWrite, cutoff, Ar_mmass, Ar_eps, Ar_sigma, RT, box, Tot_en, Tot_potential_en, Tot_kinetic_en, int_temp);
 
 			write_xyz_step(nAtoms, iter, box, coord, xyzOut);
 			

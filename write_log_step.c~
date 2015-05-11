@@ -20,7 +20,7 @@ void write_log_step(int iter, FILE *logOut, char *logFileName, char *trajFileNam
 		fprintf(logOut, "Nonbonding distance cutoff: %f Angstroms\n", cutoff);
 //		fprintf(logOut, "Re-evaluate velocities every %d steps\n\n", reevalvel);
 		fprintf(logOut, "\nArgon Parameters: \n");
-		fprintf(logOut, "Argon Mass: %f kg \n", Ar_m);
+		fprintf(logOut, "Argon Mass: %E kg \n", Ar_m);
 		fprintf(logOut, "Argon Molar Mass: %f kg mol^-1 \n", Ar_mmass);
 		fprintf(logOut, "Epsilon (kcal/mol): %f\n", Ar_eps);
 		fprintf(logOut, "Sigma (Angstrom): %f\n\n", Ar_sigma);
