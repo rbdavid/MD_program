@@ -109,6 +109,8 @@ int main() {
 
 	kBT = kB*temp;			// kBT value has units of m^2 kg s^-2 (or J)
 
+	RT = R*temp;
+
 	delta_t2 = delta_t*delta_t;	// delta_t squared; used often in the position calculation calc; ps^2
 
 //  ---------------------------------
@@ -146,7 +148,7 @@ int main() {
 	
 	init_positions(coord,nAtoms,&box);		// Units of coord: Angstrom
 
-	init_velocities(nAtoms, ig, Ar_m, kBT, atomVelocities);
+	init_velocities(nAtoms, ig, Ar_mmass, RT, atomVelocities);
 	
 	force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 
@@ -172,7 +174,7 @@ int main() {
 
 		force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 	
-		velocity_calc(nAtoms, iter, deltaWrite, Ar_m, Ar_mmass, delta_t, kB, &int_temp, &Tot_kinetic_en, atomVelocities, atomForces, old_atomForces);
+		velocity_calc(nAtoms, iter, deltaWrite, Ar_mmass, delta_t, R, &int_temp, &Tot_kinetic_en, atomVelocities, atomForces, old_atomForces);
 
 		if(iter%deltaWrite==0) {
 
