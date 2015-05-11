@@ -25,6 +25,8 @@
 static double kB = 1.3806488E-23; // units: m^2 kg s^-2 K^-1 (or J K^-1)
 static double Na = 6.02214129E23; // units: atoms mol^-1
 
+static double R = 0.0019872;		// units: kcal mol^-1 K^-1
+
 //  ---------------------------------
 // Main Program                                                        
 //  ---------------------------------
@@ -57,9 +59,8 @@ int main() {
 	double Ar_sigma6;		// sigma^6 for quick LJ energy calculation...
 
 	double kBT;
+	double RT;
 	double delta_t2;
-//	double Ar_m2d;
-//	double Ar_m_na2d;
 
 	int i, iter;			// generic indeces
 
@@ -68,6 +69,8 @@ int main() {
 //  ---------------------------------
 
 	double box; 			// cubic box dimension
+
+	double **old_coord;
 
 	double **coord;
 
@@ -112,16 +115,18 @@ int main() {
 // array memory assignment ???
 //  ---------------------------------
 
-	coord = (double**) malloc(nAtoms*sizeof(double*));
-	old_atomForces = (double**) calloc(nAtoms, sizeof(double*));
+	old_coord = (double**) calloc(nAtoms,sizeof(double*));
+	coord = (double**) calloc(nAtoms,sizeof(double*));
+	old_atomForces = (double**) calloc(nAtoms,sizeof(double*));
 	atomForces = (double**) calloc(nAtoms,sizeof(double*));         // allocate forces array memory; was calloc(nAtoms,sizeof(double*));
 	atomVelocities = (double**) calloc(nAtoms,sizeof(double*));     // allocate velocity array memory
 
 	for (i=0; i<nAtoms; i++) {
-		coord[i] = (double*) malloc(3*sizeof(double));
-		old_atomForces[i] = (double*) malloc(3*sizeof(double));
-		atomForces[i] = (double*) malloc(3*sizeof(double));
-		atomVelocities[i] = (double*) malloc(3*sizeof(double));
+		old_coord[i] = (double*) calloc(3,sizeof(double));
+		coord[i] = (double*) calloc(3,sizeof(double));
+		old_atomForces[i] = (double*) calloc(3,sizeof(double));
+		atomForces[i] = (double*) calloc(3,sizeof(double));
+		atomVelocities[i] = (double*) calloc(3,sizeof(double));
 	}
 
 //  ---------------------------------

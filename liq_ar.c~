@@ -58,8 +58,8 @@ int main() {
 
 	double kBT;
 	double delta_t2;
-	double Ar_m2d;
-	double Ar_m_na2d;
+//	double Ar_m2d;
+//	double Ar_m_na2d;
 
 	int i, iter;			// generic indeces
 
