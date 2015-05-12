@@ -15,8 +15,8 @@ nAtoms 512		# Volume will be determined by the number of particles (or I set the
  
 #SIMULATION PARAMETERS
 ---------------------------------
-nIter 10000 
-deltaWrite 100
+nIter 2000 
+deltaWrite 5
 cutoff 10.0		# Angstroms
 ig 189			# random number seed for velocity initialization
 delta_t 0.002		# units: ps; 2 fs 
