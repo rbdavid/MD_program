@@ -24,6 +24,7 @@ void force_energy_calc(int nAtoms, int iter, int deltaWrite, double box, double 
 	for(atom1=0; atom1<nAtoms; atom1++) {
 		for(j=0;j<3;j++) {
 			old_atomForces[atom1][j] = atomForces[atom1][j];
+			atomForces[atom1][j]=0;
 		}
 	}
 
