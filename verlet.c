@@ -17,7 +17,7 @@ void verlet(int nAtoms, double delta_t2, double Ar_mmass, double box, double **c
 	for(atom1=0;atom1<nAtoms;atom1++) {
 		for(j=0;j<3;j++) {
 			component = 0.0;
-			component = 2*coord[atom1][j] - old_coord[atom1][j] + convert*delta_t2*atomForces[atom1][j]/Ar_mmass;
+			component = 2*coord[atom1][j] - old_coord[atom1][j] + 0.5*convert*delta_t2*atomForces[atom1][j]/Ar_mmass;
 			
 			if(component<0) {
 				component += box;

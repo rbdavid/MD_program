@@ -146,7 +146,7 @@ int main() {
 
 	init_velocities(nAtoms, ig, Ar_mmass, RT, atomVelocities);
 
-	old_coord(nAtoms, delta_t, atomVelocities, coord, old_coord);
+	init_old_coord(nAtoms, delta_t, atomVelocities, coord, old_coord);
 
 	force_energy_calc(nAtoms, iter, deltaWrite, box, cutoff2, Ar_eps, Ar_sigma6, &Tot_potential_en, coord, atomForces, old_atomForces);
 
