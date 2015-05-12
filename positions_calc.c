@@ -14,7 +14,8 @@ void positions_calc(int nAtoms, double Ar_mmass, double delta_t, double delta_t2
 
 	for(i=0; i<nAtoms; i++) {
 		for(j=0; j<3; j++) {
-
+			
+			component = 0.0;
 			// units of component: Angstrom
 			component = coord[i][j] + delta_t*atomVelocities[i][j] + 0.5*delta_t2*convert*atomForces[i][j]/Ar_mmass;
 			// wrapping the particles within the box...

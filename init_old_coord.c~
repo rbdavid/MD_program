@@ -13,6 +13,5 @@ void init_old_coord(int nAtoms, double delta_t, double **atomVelocities, double 
 		for(j=0;j<3;j++) {
 			old_coord[atom1][j] = coord[atom1][j] - delta_t*atomVelocities[atom1][j];
 		}
-	}
 }
 
