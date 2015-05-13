@@ -26,5 +26,5 @@ delta_t 0.002		# units: ps; 2 fs
 Ar_m 6.626E-26		# units of kg per atom
 Ar_eps 0.210849		# units of kcal mol^1
 Ar_sigma 3.345		# units of angstroms 
-Ar_mmass 0.039948	# units of kg mol^-1
+MW_Ar 0.039948		# units of kg mol^-1
 

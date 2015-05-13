@@ -5,9 +5,9 @@ Name of velocity file: liq_ar.vel
 Name of force file: liq_ar.force
 Number of atoms: 512
 Temperature: 300.000000
-Number of steps: 100
+Number of steps: 2000
 Time step: 0.002000 pecoseconds
-Write to trajectory and log files every 1 steps
+Write to trajectory and log files every 100 steps
 Nonbonding distance cutoff: 10.000000 Angstroms
 
 Argon Parameters: 
@@ -21,503 +21,103 @@ Box dimension: 28.400000 Angstroms
  
 Step 0
 Total Potential Energy (kcal mol^-1) = -5.821581E+02 
-Step 1
-Total Energy (kcal mol^-1) = 7.922341E+02 
-Total Potential Energy (kcal mol^-1) = -5.818395E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.374074E+03 
-Instantaneous Temperature (K) = 8.993187E+02 
-Step 2
-Total Energy (kcal mol^-1) = 7.920491E+02 
-Total Potential Energy (kcal mol^-1) = -5.810710E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.373120E+03 
-Instantaneous Temperature (K) = 8.986946E+02 
-Step 3
-Total Energy (kcal mol^-1) = 7.917454E+02 
-Total Potential Energy (kcal mol^-1) = -5.797863E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.371532E+03 
-Instantaneous Temperature (K) = 8.976550E+02 
-Step 4
-Total Energy (kcal mol^-1) = 7.915111E+02 
-Total Potential Energy (kcal mol^-1) = -5.777925E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.369304E+03 
-Instantaneous Temperature (K) = 8.961968E+02 
-Step 5
-Total Energy (kcal mol^-1) = 7.913296E+02 
-Total Potential Energy (kcal mol^-1) = -5.750983E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.366428E+03 
-Instantaneous Temperature (K) = 8.943146E+02 
-Step 6
-Total Energy (kcal mol^-1) = 7.911998E+02 
-Total Potential Energy (kcal mol^-1) = -5.716940E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.362894E+03 
-Instantaneous Temperature (K) = 8.920016E+02 
-Step 7
-Total Energy (kcal mol^-1) = 7.910981E+02 
-Total Potential Energy (kcal mol^-1) = -5.675906E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.358689E+03 
-Instantaneous Temperature (K) = 8.892494E+02 
-Step 8
-Total Energy (kcal mol^-1) = 7.910280E+02 
-Total Potential Energy (kcal mol^-1) = -5.627691E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.353797E+03 
-Instantaneous Temperature (K) = 8.860479E+02 
-Step 9
-Total Energy (kcal mol^-1) = 7.909636E+02 
-Total Potential Energy (kcal mol^-1) = -5.572381E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.348202E+03 
-Instantaneous Temperature (K) = 8.823858E+02 
-Step 10
-Total Energy (kcal mol^-1) = 7.909168E+02 
-Total Potential Energy (kcal mol^-1) = -5.509667E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.341883E+03 
-Instantaneous Temperature (K) = 8.782505E+02 
-Step 11
-Total Energy (kcal mol^-1) = 7.908709E+02 
-Total Potential Energy (kcal mol^-1) = -5.439505E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.334821E+03 
-Instantaneous Temperature (K) = 8.736285E+02 
-Step 12
-Total Energy (kcal mol^-1) = 7.908250E+02 
-Total Potential Energy (kcal mol^-1) = -5.361690E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.326994E+03 
-Instantaneous Temperature (K) = 8.685055E+02 
-Step 13
-Total Energy (kcal mol^-1) = 7.907979E+02 
-Total Potential Energy (kcal mol^-1) = -5.275809E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.318379E+03 
-Instantaneous Temperature (K) = 8.628670E+02 
-Step 14
-Total Energy (kcal mol^-1) = 7.907755E+02 
-Total Potential Energy (kcal mol^-1) = -5.181785E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.308954E+03 
-Instantaneous Temperature (K) = 8.566985E+02 
-Step 15
-Total Energy (kcal mol^-1) = 7.907484E+02 
-Total Potential Energy (kcal mol^-1) = -5.079500E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.298698E+03 
-Instantaneous Temperature (K) = 8.499863E+02 
-Step 16
-Total Energy (kcal mol^-1) = 7.907238E+02 
-Total Potential Energy (kcal mol^-1) = -4.968695E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.287593E+03 
-Instantaneous Temperature (K) = 8.427181E+02 
-Step 17
-Total Energy (kcal mol^-1) = 7.907101E+02 
-Total Potential Energy (kcal mol^-1) = -4.849130E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.275623E+03 
-Instantaneous Temperature (K) = 8.348837E+02 
-Step 18
-Total Energy (kcal mol^-1) = 7.906943E+02 
-Total Potential Energy (kcal mol^-1) = -4.720823E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.262777E+03 
-Instantaneous Temperature (K) = 8.264758E+02 
-Step 19
-Total Energy (kcal mol^-1) = 7.906767E+02 
-Total Potential Energy (kcal mol^-1) = -4.583725E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.249049E+03 
-Instantaneous Temperature (K) = 8.174913E+02 
-Step 20
-Total Energy (kcal mol^-1) = 7.906607E+02 
-Total Potential Energy (kcal mol^-1) = -4.437830E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.234444E+03 
-Instantaneous Temperature (K) = 8.079322E+02 
-Step 21
-Total Energy (kcal mol^-1) = 7.906373E+02 
-Total Potential Energy (kcal mol^-1) = -4.283359E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.218973E+03 
-Instantaneous Temperature (K) = 7.978069E+02 
-Step 22
-Total Energy (kcal mol^-1) = 7.906088E+02 
-Total Potential Energy (kcal mol^-1) = -4.120536E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.202662E+03 
-Instantaneous Temperature (K) = 7.871316E+02 
-Step 23
-Total Energy (kcal mol^-1) = 7.905909E+02 
-Total Potential Energy (kcal mol^-1) = -3.949591E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.185550E+03 
-Instantaneous Temperature (K) = 7.759317E+02 
-Step 24
-Total Energy (kcal mol^-1) = 7.905658E+02 
-Total Potential Energy (kcal mol^-1) = -3.771246E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.167690E+03 
-Instantaneous Temperature (K) = 7.642428E+02 
-Step 25
-Total Energy (kcal mol^-1) = 7.905372E+02 
-Total Potential Energy (kcal mol^-1) = -3.586192E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.149156E+03 
-Instantaneous Temperature (K) = 7.521125E+02 
-Step 26
-Total Energy (kcal mol^-1) = 7.905137E+02 
-Total Potential Energy (kcal mol^-1) = -3.395262E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.130040E+03 
-Instantaneous Temperature (K) = 7.396008E+02 
-Step 27
-Total Energy (kcal mol^-1) = 7.904844E+02 
-Total Potential Energy (kcal mol^-1) = -3.199685E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.110453E+03 
-Instantaneous Temperature (K) = 7.267813E+02 
-Step 28
-Total Energy (kcal mol^-1) = 7.904483E+02 
-Total Potential Energy (kcal mol^-1) = -3.000804E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.090529E+03 
-Instantaneous Temperature (K) = 7.137411E+02 
-Step 29
-Total Energy (kcal mol^-1) = 7.904253E+02 
-Total Potential Energy (kcal mol^-1) = -2.799952E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.070420E+03 
-Instantaneous Temperature (K) = 7.005804E+02 
-Step 30
-Total Energy (kcal mol^-1) = 7.904021E+02 
-Total Potential Energy (kcal mol^-1) = -2.598974E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.050300E+03 
-Instantaneous Temperature (K) = 6.874115E+02 
-Step 31
-Total Energy (kcal mol^-1) = 7.903763E+02 
-Total Potential Energy (kcal mol^-1) = -2.399767E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.030353E+03 
-Instantaneous Temperature (K) = 6.743567E+02 
-Step 32
-Total Energy (kcal mol^-1) = 7.903581E+02 
-Total Potential Energy (kcal mol^-1) = -2.204209E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.010779E+03 
-Instantaneous Temperature (K) = 6.615457E+02 
-Step 33
-Total Energy (kcal mol^-1) = 7.903187E+02 
-Total Potential Energy (kcal mol^-1) = -2.014632E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.917820E+02 
-Instantaneous Temperature (K) = 6.491123E+02 
-Step 34
-Total Energy (kcal mol^-1) = 7.902708E+02 
-Total Potential Energy (kcal mol^-1) = -1.832951E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.735658E+02 
-Instantaneous Temperature (K) = 6.371900E+02 
-Step 35
-Total Energy (kcal mol^-1) = 7.902480E+02 
-Total Potential Energy (kcal mol^-1) = -1.660796E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.563275E+02 
-Instantaneous Temperature (K) = 6.259077E+02 
-Step 36
-Total Energy (kcal mol^-1) = 7.902156E+02 
-Total Potential Energy (kcal mol^-1) = -1.500345E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.402501E+02 
-Instantaneous Temperature (K) = 6.153852E+02 
-Step 37
-Total Energy (kcal mol^-1) = 7.902005E+02 
-Total Potential Energy (kcal mol^-1) = -1.352956E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.254961E+02 
-Instantaneous Temperature (K) = 6.057288E+02 
-Step 38
-Total Energy (kcal mol^-1) = 7.901682E+02 
-Total Potential Energy (kcal mol^-1) = -1.220342E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.122024E+02 
-Instantaneous Temperature (K) = 5.970282E+02 
-Step 39
-Total Energy (kcal mol^-1) = 7.901326E+02 
-Total Potential Energy (kcal mol^-1) = -1.103427E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.004754E+02 
-Instantaneous Temperature (K) = 5.893529E+02 
-Step 40
-Total Energy (kcal mol^-1) = 7.901043E+02 
-Total Potential Energy (kcal mol^-1) = -1.002841E+02 
-Total Kinetic Energy (kcal mol^-1) = 8.903884E+02 
-Instantaneous Temperature (K) = 5.827511E+02 
-Step 41
-Total Energy (kcal mol^-1) = 7.900751E+02 
-Total Potential Energy (kcal mol^-1) = -9.190574E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.819808E+02 
-Instantaneous Temperature (K) = 5.772484E+02 
-Step 42
-Total Energy (kcal mol^-1) = 7.900426E+02 
-Total Potential Energy (kcal mol^-1) = -8.521524E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.752579E+02 
-Instantaneous Temperature (K) = 5.728483E+02 
-Step 43
-Total Energy (kcal mol^-1) = 7.900002E+02 
-Total Potential Energy (kcal mol^-1) = -8.019337E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.701936E+02 
-Instantaneous Temperature (K) = 5.695338E+02 
-Step 44
-Total Energy (kcal mol^-1) = 7.899574E+02 
-Total Potential Energy (kcal mol^-1) = -7.677598E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.667334E+02 
-Instantaneous Temperature (K) = 5.672691E+02 
-Step 45
-Total Energy (kcal mol^-1) = 7.899158E+02 
-Total Potential Energy (kcal mol^-1) = -7.488246E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.647982E+02 
-Instantaneous Temperature (K) = 5.660026E+02 
-Step 46
-Total Energy (kcal mol^-1) = 7.898755E+02 
-Total Potential Energy (kcal mol^-1) = -7.441354E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.642891E+02 
-Instantaneous Temperature (K) = 5.656694E+02 
-Step 47
-Total Energy (kcal mol^-1) = 7.898406E+02 
-Total Potential Energy (kcal mol^-1) = -7.525078E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.650914E+02 
-Instantaneous Temperature (K) = 5.661945E+02 
-Step 48
-Total Energy (kcal mol^-1) = 7.897935E+02 
-Total Potential Energy (kcal mol^-1) = -7.728626E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.670798E+02 
-Instantaneous Temperature (K) = 5.674959E+02 
-Step 49
-Total Energy (kcal mol^-1) = 7.897511E+02 
-Total Potential Energy (kcal mol^-1) = -8.037135E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.701224E+02 
-Instantaneous Temperature (K) = 5.694872E+02 
-Step 50
-Total Energy (kcal mol^-1) = 7.897134E+02 
-Total Potential Energy (kcal mol^-1) = -8.437092E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.740843E+02 
-Instantaneous Temperature (K) = 5.720802E+02 
-Step 51
-Total Energy (kcal mol^-1) = 7.896771E+02 
-Total Potential Energy (kcal mol^-1) = -8.915378E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.788309E+02 
-Instantaneous Temperature (K) = 5.751868E+02 
-Step 52
-Total Energy (kcal mol^-1) = 7.896329E+02 
-Total Potential Energy (kcal mol^-1) = -9.459739E+01 
-Total Kinetic Energy (kcal mol^-1) = 8.842303E+02 
-Instantaneous Temperature (K) = 5.787207E+02 
-Step 53
-Total Energy (kcal mol^-1) = 7.896070E+02 
-Total Potential Energy (kcal mol^-1) = -1.005488E+02 
-Total Kinetic Energy (kcal mol^-1) = 8.901558E+02 
-Instantaneous Temperature (K) = 5.825989E+02 
-Step 54
-Total Energy (kcal mol^-1) = 7.895733E+02 
-Total Potential Energy (kcal mol^-1) = -1.069138E+02 
-Total Kinetic Energy (kcal mol^-1) = 8.964871E+02 
-Instantaneous Temperature (K) = 5.867427E+02 
-Step 55
-Total Energy (kcal mol^-1) = 7.895366E+02 
-Total Potential Energy (kcal mol^-1) = -1.135753E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.031118E+02 
-Instantaneous Temperature (K) = 5.910785E+02 
-Step 56
-Total Energy (kcal mol^-1) = 7.895217E+02 
-Total Potential Energy (kcal mol^-1) = -1.204045E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.099262E+02 
-Instantaneous Temperature (K) = 5.955384E+02 
-Step 57
-Total Energy (kcal mol^-1) = 7.894980E+02 
-Total Potential Energy (kcal mol^-1) = -1.273374E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.168354E+02 
-Instantaneous Temperature (K) = 6.000604E+02 
-Step 58
-Total Energy (kcal mol^-1) = 7.894726E+02 
-Total Potential Energy (kcal mol^-1) = -1.342813E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.237539E+02 
-Instantaneous Temperature (K) = 6.045885E+02 
-Step 59
-Total Energy (kcal mol^-1) = 7.894465E+02 
-Total Potential Energy (kcal mol^-1) = -1.411591E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.306056E+02 
-Instantaneous Temperature (K) = 6.090729E+02 
-Step 60
-Total Energy (kcal mol^-1) = 7.894162E+02 
-Total Potential Energy (kcal mol^-1) = -1.479075E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.373237E+02 
-Instantaneous Temperature (K) = 6.134698E+02 
-Step 61
-Total Energy (kcal mol^-1) = 7.893841E+02 
-Total Potential Energy (kcal mol^-1) = -1.544662E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.438503E+02 
-Instantaneous Temperature (K) = 6.177415E+02 
-Step 62
-Total Energy (kcal mol^-1) = 7.893525E+02 
-Total Potential Energy (kcal mol^-1) = -1.607840E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.501365E+02 
-Instantaneous Temperature (K) = 6.218557E+02 
-Step 63
-Total Energy (kcal mol^-1) = 7.893273E+02 
-Total Potential Energy (kcal mol^-1) = -1.668144E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.561417E+02 
-Instantaneous Temperature (K) = 6.257860E+02 
-Step 64
-Total Energy (kcal mol^-1) = 7.893108E+02 
-Total Potential Energy (kcal mol^-1) = -1.725225E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.618333E+02 
-Instantaneous Temperature (K) = 6.295111E+02 
-Step 65
-Total Energy (kcal mol^-1) = 7.892840E+02 
-Total Potential Energy (kcal mol^-1) = -1.779024E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.671864E+02 
-Instantaneous Temperature (K) = 6.330147E+02 
-Step 66
-Total Energy (kcal mol^-1) = 7.892601E+02 
-Total Potential Energy (kcal mol^-1) = -1.829234E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.721835E+02 
-Instantaneous Temperature (K) = 6.362853E+02 
-Step 67
-Total Energy (kcal mol^-1) = 7.892435E+02 
-Total Potential Energy (kcal mol^-1) = -1.875699E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.768135E+02 
-Instantaneous Temperature (K) = 6.393155E+02 
-Step 68
-Total Energy (kcal mol^-1) = 7.892072E+02 
-Total Potential Energy (kcal mol^-1) = -1.918646E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.810718E+02 
-Instantaneous Temperature (K) = 6.421026E+02 
-Step 69
-Total Energy (kcal mol^-1) = 7.891995E+02 
-Total Potential Energy (kcal mol^-1) = -1.957603E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.849598E+02 
-Instantaneous Temperature (K) = 6.446473E+02 
-Step 70
-Total Energy (kcal mol^-1) = 7.891886E+02 
-Total Potential Energy (kcal mol^-1) = -1.992957E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.884844E+02 
-Instantaneous Temperature (K) = 6.469540E+02 
-Step 71
-Total Energy (kcal mol^-1) = 7.891591E+02 
-Total Potential Energy (kcal mol^-1) = -2.024980E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.916570E+02 
-Instantaneous Temperature (K) = 6.490305E+02 
-Step 72
-Total Energy (kcal mol^-1) = 7.891498E+02 
-Total Potential Energy (kcal mol^-1) = -2.053443E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.944941E+02 
-Instantaneous Temperature (K) = 6.508874E+02 
-Step 73
-Total Energy (kcal mol^-1) = 7.891301E+02 
-Total Potential Energy (kcal mol^-1) = -2.078859E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.970160E+02 
-Instantaneous Temperature (K) = 6.525379E+02 
-Step 74
-Total Energy (kcal mol^-1) = 7.891081E+02 
-Total Potential Energy (kcal mol^-1) = -2.101383E+02 
-Total Kinetic Energy (kcal mol^-1) = 9.992464E+02 
-Instantaneous Temperature (K) = 6.539977E+02 
-Step 75
-Total Energy (kcal mol^-1) = 7.891063E+02 
-Total Potential Energy (kcal mol^-1) = -2.121057E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.001212E+03 
-Instantaneous Temperature (K) = 6.552842E+02 
-Step 76
-Total Energy (kcal mol^-1) = 7.890822E+02 
-Total Potential Energy (kcal mol^-1) = -2.138595E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.002942E+03 
-Instantaneous Temperature (K) = 6.564162E+02 
-Step 77
-Total Energy (kcal mol^-1) = 7.890640E+02 
-Total Potential Energy (kcal mol^-1) = -2.154019E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.004466E+03 
-Instantaneous Temperature (K) = 6.574138E+02 
-Step 78
-Total Energy (kcal mol^-1) = 7.890411E+02 
-Total Potential Energy (kcal mol^-1) = -2.167746E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.005816E+03 
-Instantaneous Temperature (K) = 6.582972E+02 
-Step 79
-Total Energy (kcal mol^-1) = 7.890203E+02 
-Total Potential Energy (kcal mol^-1) = -2.180020E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.007022E+03 
-Instantaneous Temperature (K) = 6.590870E+02 
-Step 80
-Total Energy (kcal mol^-1) = 7.890125E+02 
-Total Potential Energy (kcal mol^-1) = -2.191033E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.008116E+03 
-Instantaneous Temperature (K) = 6.598026E+02 
-Step 81
-Total Energy (kcal mol^-1) = 7.889856E+02 
-Total Potential Energy (kcal mol^-1) = -2.201385E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.009124E+03 
-Instantaneous Temperature (K) = 6.604626E+02 
-Step 82
-Total Energy (kcal mol^-1) = 7.889643E+02 
-Total Potential Energy (kcal mol^-1) = -2.211089E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.010073E+03 
-Instantaneous Temperature (K) = 6.610837E+02 
-Step 83
-Total Energy (kcal mol^-1) = 7.889557E+02 
-Total Potential Energy (kcal mol^-1) = -2.220298E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.010986E+03 
-Instantaneous Temperature (K) = 6.616809E+02 
-Step 84
-Total Energy (kcal mol^-1) = 7.889269E+02 
-Total Potential Energy (kcal mol^-1) = -2.229530E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.011880E+03 
-Instantaneous Temperature (K) = 6.622662E+02 
-Step 85
-Total Energy (kcal mol^-1) = 7.889237E+02 
-Total Potential Energy (kcal mol^-1) = -2.238472E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.012771E+03 
-Instantaneous Temperature (K) = 6.628493E+02 
-Step 86
-Total Energy (kcal mol^-1) = 7.889061E+02 
-Total Potential Energy (kcal mol^-1) = -2.247631E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.013669E+03 
-Instantaneous Temperature (K) = 6.634373E+02 
-Step 87
-Total Energy (kcal mol^-1) = 7.889025E+02 
-Total Potential Energy (kcal mol^-1) = -2.256793E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.014582E+03 
-Instantaneous Temperature (K) = 6.640346E+02 
-Step 88
-Total Energy (kcal mol^-1) = 7.888892E+02 
-Total Potential Energy (kcal mol^-1) = -2.266226E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.015512E+03 
-Instantaneous Temperature (K) = 6.646432E+02 
-Step 89
-Total Energy (kcal mol^-1) = 7.888769E+02 
-Total Potential Energy (kcal mol^-1) = -2.275825E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.016459E+03 
-Instantaneous Temperature (K) = 6.652635E+02 
-Step 90
-Total Energy (kcal mol^-1) = 7.888610E+02 
-Total Potential Energy (kcal mol^-1) = -2.285614E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.017422E+03 
-Instantaneous Temperature (K) = 6.658938E+02 
-Step 91
-Total Energy (kcal mol^-1) = 7.888297E+02 
-Total Potential Energy (kcal mol^-1) = -2.295670E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.018397E+03 
-Instantaneous Temperature (K) = 6.665314E+02 
-Step 92
-Total Energy (kcal mol^-1) = 7.888125E+02 
-Total Potential Energy (kcal mol^-1) = -2.305639E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.019376E+03 
-Instantaneous Temperature (K) = 6.671726E+02 
-Step 93
-Total Energy (kcal mol^-1) = 7.887869E+02 
-Total Potential Energy (kcal mol^-1) = -2.315677E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.020355E+03 
-Instantaneous Temperature (K) = 6.678128E+02 
-Step 94
-Total Energy (kcal mol^-1) = 7.887838E+02 
-Total Potential Energy (kcal mol^-1) = -2.325402E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.021324E+03 
-Instantaneous Temperature (K) = 6.684472E+02 
-Step 95
-Total Energy (kcal mol^-1) = 7.887758E+02 
-Total Potential Energy (kcal mol^-1) = -2.335001E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.022276E+03 
-Instantaneous Temperature (K) = 6.690703E+02 
-Step 96
-Total Energy (kcal mol^-1) = 7.887560E+02 
-Total Potential Energy (kcal mol^-1) = -2.344453E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.023201E+03 
-Instantaneous Temperature (K) = 6.696759E+02 
-Step 97
-Total Energy (kcal mol^-1) = 7.887502E+02 
-Total Potential Energy (kcal mol^-1) = -2.353393E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.024090E+03 
-Instantaneous Temperature (K) = 6.702573E+02 
-Step 98
-Total Energy (kcal mol^-1) = 7.887244E+02 
-Total Potential Energy (kcal mol^-1) = -2.362048E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.024929E+03 
-Instantaneous Temperature (K) = 6.708068E+02 
-Step 99
-Total Energy (kcal mol^-1) = 7.887185E+02 
-Total Potential Energy (kcal mol^-1) = -2.369885E+02 
-Total Kinetic Energy (kcal mol^-1) = 1.025707E+03 
-Instantaneous Temperature (K) = 6.713159E+02 
 Step 100
 Total Energy (kcal mol^-1) = 7.887078E+02 
 Total Potential Energy (kcal mol^-1) = -2.377007E+02 
 Total Kinetic Energy (kcal mol^-1) = 1.026408E+03 
 Instantaneous Temperature (K) = 6.717750E+02 
+Step 200
+Total Energy (kcal mol^-1) = 7.883278E+02 
+Total Potential Energy (kcal mol^-1) = -2.307231E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.019051E+03 
+Instantaneous Temperature (K) = 6.669596E+02 
+Step 300
+Total Energy (kcal mol^-1) = 7.883227E+02 
+Total Potential Energy (kcal mol^-1) = -2.360513E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.024374E+03 
+Instantaneous Temperature (K) = 6.704435E+02 
+Step 400
+Total Energy (kcal mol^-1) = 7.883059E+02 
+Total Potential Energy (kcal mol^-1) = -2.110674E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.993733E+02 
+Instantaneous Temperature (K) = 6.540808E+02 
+Step 500
+Total Energy (kcal mol^-1) = 7.884896E+02 
+Total Potential Energy (kcal mol^-1) = -2.046741E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.931637E+02 
+Instantaneous Temperature (K) = 6.500166E+02 
+Step 600
+Total Energy (kcal mol^-1) = 7.884117E+02 
+Total Potential Energy (kcal mol^-1) = -2.010349E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.894465E+02 
+Instantaneous Temperature (K) = 6.475838E+02 
+Step 700
+Total Energy (kcal mol^-1) = 7.884522E+02 
+Total Potential Energy (kcal mol^-1) = -1.898984E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.783506E+02 
+Instantaneous Temperature (K) = 6.403216E+02 
+Step 800
+Total Energy (kcal mol^-1) = 7.884101E+02 
+Total Potential Energy (kcal mol^-1) = -2.240454E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.012456E+03 
+Instantaneous Temperature (K) = 6.626430E+02 
+Step 900
+Total Energy (kcal mol^-1) = 7.883640E+02 
+Total Potential Energy (kcal mol^-1) = -2.319674E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.020331E+03 
+Instantaneous Temperature (K) = 6.677976E+02 
+Step 1000
+Total Energy (kcal mol^-1) = 7.882785E+02 
+Total Potential Energy (kcal mol^-1) = -1.998360E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.881145E+02 
+Instantaneous Temperature (K) = 6.467120E+02 
+Step 1100
+Total Energy (kcal mol^-1) = 7.884276E+02 
+Total Potential Energy (kcal mol^-1) = -2.063242E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.947518E+02 
+Instantaneous Temperature (K) = 6.510560E+02 
+Step 1200
+Total Energy (kcal mol^-1) = 7.883930E+02 
+Total Potential Energy (kcal mol^-1) = -2.236944E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.012087E+03 
+Instantaneous Temperature (K) = 6.624020E+02 
+Step 1300
+Total Energy (kcal mol^-1) = 7.882929E+02 
+Total Potential Energy (kcal mol^-1) = -2.180123E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.006305E+03 
+Instantaneous Temperature (K) = 6.586176E+02 
+Step 1400
+Total Energy (kcal mol^-1) = 7.884713E+02 
+Total Potential Energy (kcal mol^-1) = -2.126382E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.001109E+03 
+Instantaneous Temperature (K) = 6.552170E+02 
+Step 1500
+Total Energy (kcal mol^-1) = 7.883428E+02 
+Total Potential Energy (kcal mol^-1) = -2.130777E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.001421E+03 
+Instantaneous Temperature (K) = 6.554206E+02 
+Step 1600
+Total Energy (kcal mol^-1) = 7.883945E+02 
+Total Potential Energy (kcal mol^-1) = -2.599844E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.048379E+03 
+Instantaneous Temperature (K) = 6.861545E+02 
+Step 1700
+Total Energy (kcal mol^-1) = 7.884948E+02 
+Total Potential Energy (kcal mol^-1) = -1.935179E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.820127E+02 
+Instantaneous Temperature (K) = 6.427184E+02 
+Step 1800
+Total Energy (kcal mol^-1) = 7.884549E+02 
+Total Potential Energy (kcal mol^-1) = -2.114213E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.998761E+02 
+Instantaneous Temperature (K) = 6.544099E+02 
+Step 1900
+Total Energy (kcal mol^-1) = 7.883668E+02 
+Total Potential Energy (kcal mol^-1) = -1.998860E+02 
+Total Kinetic Energy (kcal mol^-1) = 9.882528E+02 
+Instantaneous Temperature (K) = 6.468025E+02 
+Step 2000
+Total Energy (kcal mol^-1) = 7.884273E+02 
+Total Potential Energy (kcal mol^-1) = -2.135966E+02 
+Total Kinetic Energy (kcal mol^-1) = 1.002024E+03 
+Instantaneous Temperature (K) = 6.558155E+02 
